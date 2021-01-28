@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Eliminar producto</h1>
+
+<h2>{{ object.name }}</h2>
+<p>{{ object.telephone }}</p>
+<p>{{ object.mail }}</p>
+<p>{{ object.join_date }}</p>
+<p>{{ object.net_cash }}</p>
+
+<form method='POST'> {% csrf_token %}
+    <h1>¿Está seguro de que desea eliminar por completo este producto?</h1>
+    <p>
+        <input type='submit' value='Si'/> <a href='../'>Cancelar</a>
+    </p>
+</form>
+
+{% endblock %}

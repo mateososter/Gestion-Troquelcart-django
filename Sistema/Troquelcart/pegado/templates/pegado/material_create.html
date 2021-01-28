@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Agregar material</h1>
+
+<form method='POST'>{% csrf_token %}
+    <input type="text" placeholder="Material" name="material"/>
+    <input type='submit' value='Crear' />
+</form>
+
+{% endblock %}

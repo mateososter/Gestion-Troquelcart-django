@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Worker, Product, Client, Payment
+from .models import Worker, Product, Client, Payment, Order
 
 class WorkerModelForm(forms.ModelForm):
     class Meta:
@@ -51,5 +51,20 @@ class PaymentModelForm(forms.ModelForm):
         fields= [
             "id_workername",
             "date",
+            "amount"
+        ]
+
+class OrderModelForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields= [
+            "id_product",
+            "id_workername",
+            "quantity",
+            "prefolding",
+            "window",
+            "lateral",
+            "bottom",
+            "is_complete",
             "amount"
         ]

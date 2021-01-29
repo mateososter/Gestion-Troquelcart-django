@@ -5,6 +5,7 @@
     <meta charset="utf-8">
 	<title>Troquelcart</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="icon" type="icon" href= "{% static 'images/favicon.ico' %}">
     <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
 </head>
 
@@ -12,10 +13,12 @@
 	<header>
 		<nav>  
 			<ul>
-				<li><p>Opcion1</p>
-				<li><p>Opcion2</p>
-				<li><p>Opcion3</p>
-				<li><p>Opcion4</p>
+				<li><a href= "{% url 'home' %}">Troquelcart</a>
+				<li><a href="{% url 'pegado:worker-list' %}">Pegadoras</a>
+				<li><a href="{% url 'pegado:product-list' %}">Productos</a>
+				<li><a href="{% url 'pegado:client-list' %}">Clientes</a>
+				<li><a href="{% url 'pegado:payment-list' %}">Pagos</a>
+				<li><a href="{% url 'pegado:order-list' %}">Trabajos</a>
 			</ul>
 		</nav>
 	</header>
@@ -36,6 +39,4 @@
 	</footer>
 
 
-</body>
-
-</html>
+</bo

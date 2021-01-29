@@ -7,8 +7,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView
     )
-from .forms import WorkerModelForm, ProductModelForm, ClientModelForm, PaymentModelForm
-from .models import Worker, Product, Client, Material, Payment
+from .forms import WorkerModelForm, ProductModelForm, ClientModelForm, PaymentModelForm, OrderModelForm
+from .models import Worker, Product, Client, Material, Payment, Order
 
 # Create your views here.
 
@@ -143,3 +143,20 @@ class PaymentCreateView(CreateView):
 class PaymentListView(ListView):
     template_name = "pegado/payment_list.html"
     queryset = Payment.objects.all()
+
+class OrderCreateView(CreateView):
+    template_name = "pegado/order_create.html"
+    form_class = OrderModelForm
+    queryset = Order.objects.all()
+
+class OrderListView(ListView):
+    template_name = "pegado/order_list.html"
+    queryset = Order.objects.all()
+
+class OrderDetailView(DetailView):
+    template_name = "pegado/order_detail.html"
+    queryset = Order.objects.all()
+
+    def get_object(self):
+        id_ = self.kwargs.get("pk")
+        return get_object_or_404(Order,id=id_)

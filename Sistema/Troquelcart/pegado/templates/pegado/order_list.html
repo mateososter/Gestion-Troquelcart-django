@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Trabajos realizados</h1>
+
+<ul>
+    {% for instance in object_list %}
+
+        <table>
+            <tr>
+                <td><a href='{{ instance.get_absolute_url }}'>{{ instance.id_product }}</a></td>
+                <td>{{instance.date}}</td>
+                <td>{{instance.id_workername}}</td>
+                <td>{{instance.amount}}</td>
+            </tr>
+        </table>
+        
+    {% endfor %}
+</ul>
+
+{% endblock %}

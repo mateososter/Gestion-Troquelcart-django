@@ -7,7 +7,7 @@
 <ul>
     {% for instance in object_list %}
         <li>
-            <a href='{{ instance.get_absolute_url }}'>{{ instance.name }}</a>
+            <a href='{{ instance.get_absolute_url }}'>{{ instance.model }}</a>
         </li>
     {% endfor %}
 </ul>

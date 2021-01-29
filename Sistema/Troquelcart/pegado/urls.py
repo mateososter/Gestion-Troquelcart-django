@@ -21,7 +21,8 @@ from .views import (
     PaymentCreateView, PaymentListView,
     ClientCreateView, ClientDeleteView, ClientDetailView, ClientListView, ClientUpdateView,
     ProductCreateView,ProductListView, ProductDetailView, ProductUpdateView, ProductDeleteView,
-    WorkerCreateView, WorkerListView, WorkerUpdateView, WorkerDetailView, WorkerDeleteView
+    WorkerCreateView, WorkerListView, WorkerUpdateView, WorkerDetailView, WorkerDeleteView,
+    OrderCreateView, OrderListView, OrderDetailView
     )
 
 app_name = "pegado"
@@ -43,7 +44,10 @@ urlpatterns = [
     path('client/create/', ClientCreateView.as_view(), name="client-create"),
     path('material/create/', material_create_view, name="material-create"),
     path('payment/create/', PaymentCreateView.as_view(), name="payment-create"),
-    path('payment/', PaymentListView.as_view(), name="payment-list")
+    path('payment/', PaymentListView.as_view(), name="payment-list"),
+    path('order/<int:pk>/', OrderDetailView.as_view(), name="order-detail"),
+    path('order/create/', OrderCreateView.as_view(), name="order-create"),
+    path('order/', OrderListView.as_view(), name="order-list")
     
 
 ]

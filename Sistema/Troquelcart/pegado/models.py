@@ -113,3 +113,6 @@ class Order(models.Model):
     bottom = models.BooleanField(verbose_name= "fondeo", help_text="Indica si se realizo fondeo")
     is_complete = models.BooleanField(verbose_name= "completo", help_text="Indica si el pedido esta terminado completamente")
     amount = models.DecimalField(max_digits=20,decimal_places=2,verbose_name="monto del trabajo")
+
+    def get_absolute_url(self):
+        return reverse("pegado:order-detail", kwargs={"pk":self.id})

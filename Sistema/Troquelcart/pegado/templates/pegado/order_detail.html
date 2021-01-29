@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Datos del trabajo</h1>
+
+<h2>Orden {{ object.id }}</h2>
+<p>{{ object.id_product }}</p>
+<p>{{ object.id_workername }}</p>
+<p>{{ object.quantity }}</p>
+<p>{{ object.amount }}</p>
+<p>{% if object.prefolding  %} Predoblado {% endif %}</p>
+<p>{% if object.window  %} Ventana {% endif %}</p>
+<p>{% if object.lateral  %} Lateral {% endif %}</p>
+<p>{% if object.bottom  %} Fondeo {% endif %}</p>
+<p>{% if object.is_complete  %} COMPLETO {% endif %}</p>
+
+
+
+{% endblock %}
